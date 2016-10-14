@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>Daftar</h1>
-	<form method="POST" action="sess_star">
+	<form method="POST" action="sess_doble_star">
 		<p>
 			<label>id user</label>
 			<input type="text" name="id">
@@ -13,10 +13,6 @@
 		<p>
 			<label>Nama :</label>
 			<input type="text" name="nama" value="">
-		</p>
-		<p>
-			<label>Alamat:</label>
-			<textarea name="alamat"></textarea>
 		</p>
 		<p>
 		<label>Level: </label>
