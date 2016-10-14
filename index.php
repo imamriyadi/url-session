@@ -13,7 +13,7 @@ function sess_star(){
 	$id = $_POST['id'];
 	$nama = $_POST['nama'];
 	$lv = $_POST['lv'];
-	if($id|| $nama|| $alamat || $lv){
+	if($id|| $nama|| $lv){
 	$data['id_user'] = $id;
 	$data['nama_user'] = $nama;
 	$data['lv_user'] = $lv;
@@ -27,7 +27,7 @@ function sess_doble_star(){
 	$id = $_POST['id'];
 	$nama = $_POST['nama'];
 	$lv = $_POST['lv'];
-	if($id|| $nama|| $alamat || $lv){
+	if($id|| $nama|| $lv){
 	$data['id_user'] = $id;
 	$data['nama_user'] = $nama;
 	$data['lv_user'] = $lv;
