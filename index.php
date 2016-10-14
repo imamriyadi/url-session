@@ -12,25 +12,48 @@ function create($url){
 function sess_star(){
 	$id = $_POST['id'];
 	$nama = $_POST['nama'];
-	$alamat= $_POST['alamat'];
 	$lv = $_POST['lv'];
-
 	if($id|| $nama|| $alamat || $lv){
 	$data['id_user'] = $id;
 	$data['nama_user'] = $nama;
 	$data['lv_user'] = $lv;
 	$_SESSION['user'] = $data;
 	}else{
-		header("location:daftar");
+		header("location:create");
+	}
+}
+
+function sess_doble_star(){
+	$id = $_POST['id'];
+	$nama = $_POST['nama'];
+	$lv = $_POST['lv'];
+	if($id|| $nama|| $alamat || $lv){
+	$data['id_user'] = $id;
+	$data['nama_user'] = $nama;
+	$data['lv_user'] = $lv;
+	$_SESSION['user'][] = $data;
+	header("location:sess_view");
+	}else{
+		header("location:create");
 	}
 }
 
 function sess_view(){
-	
+	echo "<h1>+ <a href='create'>Daftar </a></h1>";
 	if(isset($_SESSION['user'])){
-		echo $_SESSION['user']['id_user'] . '<br>';
-		echo $_SESSION['user']['nama_user'] . '<br>';
-		echo $_SESSION['user']['lv_user'] . '<br>';
+		echo "<table border='1'>";
+		echo "<thead> <tr><th>Id</th><th>Nama</th><th>Lv</th></thead>";
+		echo "<tbody>";
+		$var = $_SESSION['user'];
+		foreach ($var as $key => $isi) {
+			echo "<tr>";		
+			 echo '<td>' . $isi['id_user'] .'</td>';
+			 echo '<td>' . $isi['nama_user'] . '</td>';
+			 echo '<td>' . $isi['lv_user'] . '</td>'; 
+			 echo "</tr>";
+		}
+		echo "</tbody></table>";
+		
 	}else{
 		echo "Session tidak ada";
 	}
